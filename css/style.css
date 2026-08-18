@@ -3,6 +3,11 @@
    Smart Unit Converter
 ========================================= */
 
+
+/* =========================
+   Reset
+========================= */
+
 * {
     margin: 0;
     padding: 0;
@@ -11,6 +16,7 @@
 
 
 :root {
+
     --bg: #f5f7fb;
     --surface: #ffffff;
     --surface-soft: #f8fafc;
@@ -23,6 +29,8 @@
     --primary: #6366f1;
     --primary-dark: #4f46e5;
 
+    --danger: #ef4444;
+
     --shadow:
         0 20px 50px rgba(15, 23, 42, 0.08);
 
@@ -30,7 +38,12 @@
 }
 
 
+/* =========================
+   Dark Theme
+========================= */
+
 body.dark {
+
     --bg: #0f172a;
     --surface: #111827;
     --surface-soft: #1e293b;
@@ -41,9 +54,13 @@ body.dark {
     --border: #334155;
 
     --shadow:
-        0 20px 50px rgba(0, 0, 0, 0.3);
+        0 20px 50px rgba(0, 0, 0, 0.35);
 }
 
+
+/* =========================
+   Base
+========================= */
 
 html {
     scroll-behavior: smooth;
@@ -51,6 +68,7 @@ html {
 
 
 body {
+
     min-height: 100vh;
 
     font-family:
@@ -71,8 +89,8 @@ body {
 
 
 button,
-select,
-input {
+input,
+select {
     font: inherit;
 }
 
@@ -83,33 +101,46 @@ button {
 
 
 .container {
-    width: min(1120px, calc(100% - 40px));
+
+    width: min(
+        1120px,
+        calc(100% - 40px)
+    );
+
     margin: 0 auto;
 }
 
 
-/* =========================================
+/* =========================
    Header
-========================================= */
+========================= */
 
 .header {
-    border-bottom: 1px solid var(--border);
+
     background: var(--surface);
+
+    border-bottom:
+        1px solid var(--border);
 }
 
 
 .nav {
+
     height: 72px;
 
     display: flex;
+
     align-items: center;
     justify-content: space-between;
 }
 
 
 .logo {
+
     display: flex;
+
     align-items: center;
+
     gap: 10px;
 
     color: var(--text);
@@ -122,6 +153,7 @@ button {
 
 
 .logo-icon {
+
     width: 38px;
     height: 38px;
 
@@ -131,6 +163,7 @@ button {
     border-radius: 11px;
 
     background: var(--primary);
+
     color: white;
 
     font-size: 1.1rem;
@@ -138,56 +171,81 @@ button {
 
 
 .theme-btn {
+
     width: 42px;
     height: 42px;
 
-    border: 1px solid var(--border);
+    display: grid;
+    place-items: center;
+
+    border:
+        1px solid var(--border);
+
     border-radius: 12px;
 
     background: var(--surface-soft);
+
     color: var(--text);
 
-    transition: 0.2s ease;
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease;
 }
 
 
 .theme-btn:hover {
+
     transform: translateY(-2px);
-    border-color: var(--primary);
+
+    border-color:
+        var(--primary);
 }
 
 
-/* =========================================
+/* =========================
    Hero
-========================================= */
+========================= */
 
 .hero {
-    padding: 80px 0 55px;
+
+    padding:
+        80px 0 55px;
+
     text-align: center;
 }
 
 
 .badge {
+
     display: inline-flex;
 
-    padding: 8px 14px;
+    padding:
+        8px 14px;
 
-    border: 1px solid #c7d2fe;
+    border:
+        1px solid #c7d2fe;
+
     border-radius: 999px;
 
     background: #eef2ff;
+
     color: var(--primary);
 
     font-size: 0.75rem;
+
     font-weight: 800;
+
     letter-spacing: 0.08em;
 }
 
 
 .hero h1 {
+
     margin-top: 22px;
 
-    font-size: clamp(2.6rem, 7vw, 5rem);
+    font-size:
+        clamp(2.6rem, 7vw, 5rem);
+
     line-height: 1.05;
 
     letter-spacing: -0.05em;
@@ -195,106 +253,235 @@ button {
 
 
 .hero h1 span {
+
     color: var(--primary);
 }
 
 
 .hero p {
+
     max-width: 600px;
 
-    margin: 22px auto 0;
+    margin:
+        22px auto 0;
 
     color: var(--text-soft);
 
     font-size: 1.08rem;
+
     line-height: 1.7;
 }
 
 
-/* =========================================
-   Converter
-========================================= */
+/* =========================
+   Converter Section
+========================= */
 
 .converter-section {
+
     padding-bottom: 80px;
 }
 
 
 .converter-card {
+
     padding: 32px;
 
     background: var(--surface);
 
-    border: 1px solid var(--border);
+    border:
+        1px solid var(--border);
+
     border-radius: var(--radius);
 
     box-shadow: var(--shadow);
 }
 
 
+/* =========================
+   Form
+========================= */
+
 .form-group {
+
     display: flex;
+
     flex-direction: column;
+
     gap: 10px;
 }
 
 
 .form-group label,
 .conversion-box label {
+
     color: var(--text-soft);
 
     font-size: 0.82rem;
+
     font-weight: 700;
 }
 
 
-select,
-input {
+/* =========================
+   SELECT
+========================= */
+
+select {
+
     width: 100%;
 
-    border: 1px solid var(--border);
+    min-height: 52px;
+
+    padding:
+        0 42px 0 16px;
+
+    border:
+        1px solid var(--border);
+
     border-radius: 12px;
 
-    background: var(--surface-soft);
-    color: var(--text);
+    background-color:
+        var(--surface-soft);
+
+    color:
+        var(--text);
 
     outline: none;
 
-    transition: 0.2s ease;
+    cursor: pointer;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
 
-select {
-    padding: 14px 16px;
+select:hover {
+
+    border-color:
+        var(--primary);
 }
 
 
-input {
-    padding: 16px;
+select:focus {
 
-    font-size: 1.4rem;
-    font-weight: 700;
-}
-
-
-select:focus,
-input:focus {
-    border-color: var(--primary);
+    border-color:
+        var(--primary);
 
     box-shadow:
-        0 0 0 3px rgba(99, 102, 241, 0.12);
+        0 0 0 3px
+        rgba(99, 102, 241, 0.12);
 }
 
 
-/* =========================================
+/*
+   Important:
+   Native select menus are rendered
+   partly by the operating system/browser.
+*/
+
+select option {
+
+    background-color:
+        var(--surface);
+
+    color:
+        var(--text);
+
+    padding: 10px;
+}
+
+
+body.dark select {
+
+    background-color:
+        #1e293b;
+
+    color:
+        #f8fafc;
+}
+
+
+body.dark select option {
+
+    background-color:
+        #1e293b;
+
+    color:
+        #f8fafc;
+}
+
+
+/* =========================
+   Input
+========================= */
+
+input {
+
+    width: 100%;
+
+    min-height: 58px;
+
+    margin-top: 10px;
+
+    padding:
+        0 16px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 12px;
+
+    background:
+        var(--surface-soft);
+
+    color:
+        var(--text);
+
+    outline: none;
+
+    font-size: 1.35rem;
+
+    font-weight: 700;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+input::placeholder {
+
+    color:
+        var(--text-soft);
+}
+
+
+input:focus {
+
+    border-color:
+        var(--primary);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(99, 102, 241, 0.12);
+}
+
+
+/* =========================
    Conversion Row
-========================================= */
+========================= */
 
 .conversion-row {
+
     margin-top: 26px;
 
     display: grid;
-    grid-template-columns: 1fr 60px 1fr;
+
+    grid-template-columns:
+        1fr 60px 1fr;
+
     gap: 18px;
 
     align-items: end;
@@ -302,153 +489,216 @@ input:focus {
 
 
 .conversion-box {
+
     display: flex;
+
     flex-direction: column;
+
     gap: 10px;
 }
 
 
-.input-wrapper {
-    position: relative;
+/* =========================
+   Swap
+========================= */
+
+.swap-btn {
+
+    width: 52px;
+    height: 52px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 50%;
+
+    background:
+        var(--surface-soft);
+
+    color:
+        var(--primary);
+
+    font-size: 1.4rem;
+
+    font-weight: 800;
+
+    transition:
+        transform 0.25s ease,
+        background 0.2s ease,
+        color 0.2s ease;
 }
 
 
+.swap-btn:hover {
+
+    background:
+        var(--primary);
+
+    color: white;
+
+    transform:
+        rotate(180deg);
+}
+
+
+/* =========================
+   Result
+========================= */
+
 .result-box {
+
     min-height: 58px;
 
-    padding: 0 16px;
+    padding:
+        0 16px;
 
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
 
-    border: 1px solid var(--border);
+    border:
+        1px solid var(--border);
+
     border-radius: 12px;
 
-    background: var(--surface-soft);
+    background:
+        var(--surface-soft);
 }
 
 
 #result {
+
     overflow: hidden;
 
-    color: var(--primary);
+    color:
+        var(--primary);
 
     font-size: 1.35rem;
+
     font-weight: 800;
 
     text-overflow: ellipsis;
+
     white-space: nowrap;
 }
 
 
 .copy-btn {
+
     border: none;
+
     background: transparent;
+
+    color: var(--text);
 
     font-size: 1.1rem;
 
     opacity: 0.7;
 
-    transition: 0.2s ease;
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease;
 }
 
 
 .copy-btn:hover {
+
     opacity: 1;
-    transform: scale(1.1);
+
+    transform:
+        scale(1.1);
 }
 
 
-.swap-btn {
-    width: 52px;
-    height: 52px;
-
-    border: 1px solid var(--border);
-    border-radius: 50%;
-
-    background: var(--surface-soft);
-    color: var(--primary);
-
-    font-size: 1.4rem;
-    font-weight: 800;
-
-    transition: 0.25s ease;
-}
-
-
-.swap-btn:hover {
-    background: var(--primary);
-    color: white;
-
-    transform: rotate(180deg);
-}
-
-
-/* =========================================
-   Info
-========================================= */
+/* =========================
+   Conversion Info
+========================= */
 
 .conversion-info {
+
     margin-top: 28px;
+
     padding-top: 22px;
 
-    border-top: 1px solid var(--border);
+    border-top:
+        1px solid var(--border);
 
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
 
     gap: 20px;
 }
 
 
-.conversion-info > div {
+.conversion-description,
+.precision-control {
+
     display: flex;
+
     flex-direction: column;
+
     gap: 6px;
 }
 
 
 .info-label {
-    color: var(--text-soft);
+
+    color:
+        var(--text-soft);
 
     font-size: 0.75rem;
+
     font-weight: 700;
+
     text-transform: uppercase;
+
     letter-spacing: 0.06em;
 }
 
 
 .conversion-info strong {
+
     font-size: 0.95rem;
 }
 
 
-.conversion-info select {
+.precision-control select {
+
+    min-height: 40px;
+
     width: auto;
 
-    padding: 8px 12px;
+    padding:
+        0 34px 0 12px;
 
     font-size: 0.85rem;
 }
 
 
-/* =========================================
+/* =========================
    Sections
-========================================= */
+========================= */
 
 .popular-section,
 .history-section {
+
     margin-top: 70px;
 }
 
 
 .section-heading {
+
     margin-bottom: 22px;
 
     display: flex;
-    align-items: end;
+
+    align-items: flex-end;
+
     justify-content: space-between;
 
     gap: 20px;
@@ -456,27 +706,34 @@ input:focus {
 
 
 .section-label {
-    color: var(--primary);
+
+    color:
+        var(--primary);
 
     font-size: 0.72rem;
+
     font-weight: 800;
+
     letter-spacing: 0.1em;
 }
 
 
 .section-heading h2 {
+
     margin-top: 5px;
 
     font-size: 1.6rem;
+
     letter-spacing: -0.03em;
 }
 
 
-/* =========================================
+/* =========================
    Popular Cards
-========================================= */
+========================= */
 
 .popular-grid {
+
     display: grid;
 
     grid-template-columns:
@@ -487,20 +744,27 @@ input:focus {
 
 
 .popular-card {
+
     padding: 22px;
 
     display: flex;
+
     flex-direction: column;
+
     align-items: flex-start;
 
     gap: 8px;
 
-    border: 1px solid var(--border);
+    border:
+        1px solid var(--border);
+
     border-radius: 16px;
 
-    background: var(--surface);
+    background:
+        var(--surface);
 
-    color: var(--text);
+    color:
+        var(--text);
 
     text-align: left;
 
@@ -512,57 +776,78 @@ input:focus {
 
 
 .popular-card:hover {
-    transform: translateY(-4px);
 
-    border-color: var(--primary);
+    transform:
+        translateY(-4px);
+
+    border-color:
+        var(--primary);
 
     box-shadow:
-        0 12px 30px rgba(15, 23, 42, 0.08);
+        0 12px 30px
+        rgba(15, 23, 42, 0.08);
 }
 
 
 .popular-card span {
+
     font-size: 1.5rem;
 }
 
 
 .popular-card strong {
+
     font-size: 0.95rem;
 }
 
 
 .popular-card small {
-    color: var(--text-soft);
+
+    color:
+        var(--text-soft);
 }
 
 
-/* =========================================
+/* =========================
    History
-========================================= */
+========================= */
 
 .clear-btn {
-    padding: 9px 14px;
 
-    border: 1px solid var(--border);
+    padding:
+        9px 14px;
+
+    border:
+        1px solid var(--border);
+
     border-radius: 10px;
 
-    background: var(--surface);
+    background:
+        var(--surface);
 
-    color: var(--text-soft);
+    color:
+        var(--text-soft);
 
     font-size: 0.82rem;
+
     font-weight: 700;
 }
 
 
 .clear-btn:hover {
-    border-color: #ef4444;
-    color: #ef4444;
+
+    border-color:
+        var(--danger);
+
+    color:
+        var(--danger);
 }
 
 
 .history-list {
+
     display: flex;
+
     flex-direction: column;
 
     gap: 10px;
@@ -570,67 +855,81 @@ input:focus {
 
 
 .history-item {
-    padding: 16px 18px;
+
+    padding:
+        16px 18px;
 
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
 
-    gap: 20px;
+    border:
+        1px solid var(--border);
 
-    border: 1px solid var(--border);
     border-radius: 12px;
 
-    background: var(--surface);
+    background:
+        var(--surface);
 }
 
 
 .history-main {
+
     font-weight: 700;
 }
 
 
-.history-result {
-    color: var(--primary);
-
-    font-weight: 800;
-}
-
-
 .history-time {
-    color: var(--text-soft);
+
+    margin-top: 5px;
+
+    color:
+        var(--text-soft);
 
     font-size: 0.75rem;
 }
 
 
 .empty-history {
+
     padding: 30px;
 
-    border: 1px dashed var(--border);
+    border:
+        1px dashed var(--border);
+
     border-radius: 14px;
 
-    color: var(--text-soft);
+    color:
+        var(--text-soft);
 
     text-align: center;
 }
 
 
-/* =========================================
+/* =========================
    Footer
-========================================= */
+========================= */
 
 .footer {
+
     padding: 30px 0;
 
-    border-top: 1px solid var(--border);
+    border-top:
+        1px solid var(--border);
 
-    background: var(--surface);
+    background:
+        var(--surface);
 }
 
 
 .footer .container {
+
     display: flex;
+
+    align-items: center;
+
     justify-content: space-between;
 
     gap: 20px;
@@ -638,48 +937,64 @@ input:focus {
 
 
 .footer p {
-    color: var(--text-soft);
+
+    color:
+        var(--text-soft);
 
     font-size: 0.85rem;
 }
 
 
-/* =========================================
+/* =========================
    Responsive
-========================================= */
+========================= */
 
 @media (max-width: 800px) {
 
     .hero {
-        padding: 60px 0 40px;
+
+        padding:
+            60px 0 40px;
     }
 
 
     .conversion-row {
+
         grid-template-columns: 1fr;
     }
 
 
     .swap-btn {
-        margin: 0 auto;
 
-        transform: rotate(90deg);
+        margin:
+            4px auto;
+
+        transform:
+            rotate(90deg);
     }
 
 
     .swap-btn:hover {
-        transform: rotate(270deg);
+
+        transform:
+            rotate(270deg);
     }
 
 
     .popular-grid {
-        grid-template-columns: repeat(2, 1fr);
+
+        grid-template-columns:
+            repeat(2, 1fr);
     }
 
 
     .conversion-info {
-        align-items: flex-start;
-        flex-direction: column;
+
+        align-items:
+            flex-start;
+
+        flex-direction:
+            column;
     }
 
 }
@@ -688,28 +1003,41 @@ input:focus {
 @media (max-width: 550px) {
 
     .container {
-        width: min(100% - 24px, 1120px);
+
+        width:
+            min(100% - 24px, 1120px);
     }
 
 
     .converter-card {
+
         padding: 20px;
     }
 
 
     .popular-grid {
+
         grid-template-columns: 1fr;
     }
 
 
     .footer .container {
-        flex-direction: column;
+
+        align-items:
+            flex-start;
+
+        flex-direction:
+            column;
     }
 
 
     .section-heading {
-        align-items: flex-start;
-        flex-direction: column;
+
+        align-items:
+            flex-start;
+
+        flex-direction:
+            column;
     }
 
 }
