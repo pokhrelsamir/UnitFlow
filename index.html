@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="UnitFlow - A fast and modern smart unit converter."
+    >
+
+    <title>UnitFlow — Smart Unit Converter</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container nav">
+
+            <a href="#" class="logo">
+                <span class="logo-icon">⚡</span>
+                <span>UnitFlow</span>
+            </a>
+
+            <button
+                class="theme-btn"
+                id="themeBtn"
+                aria-label="Toggle theme"
+            >
+                🌙
+            </button>
+
+        </div>
+    </header>
+
+
+    <!-- Main -->
+    <main>
+
+        <!-- Hero -->
+        <section class="hero">
+            <div class="container">
+
+                <span class="badge">⚡ SMART UNIT CONVERTER</span>
+
+                <h1>
+                    Convert Anything.
+                    <span>Instantly.</span>
+                </h1>
+
+                <p>
+                    Fast, accurate and simple unit conversions
+                    for everyday calculations.
+                </p>
+
+            </div>
+        </section>
+
+
+        <!-- Converter -->
+        <section class="converter-section">
+
+            <div class="container">
+
+                <div class="converter-card">
+
+                    <!-- Category -->
+                    <div class="form-group category-group">
+
+                        <label for="category">
+                            Conversion Category
+                        </label>
+
+                        <select id="category"></select>
+
+                    </div>
+
+
+                    <!-- Conversion Row -->
+                    <div class="conversion-row">
+
+                        <!-- From -->
+                        <div class="conversion-box">
+
+                            <label for="fromUnit">
+                                From
+                            </label>
+
+                            <select id="fromUnit"></select>
+
+                            <div class="input-wrapper">
+
+                                <input
+                                    type="number"
+                                    id="inputValue"
+                                    value="1"
+                                    placeholder="Enter value"
+                                    step="any"
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Swap -->
+                        <button
+                            class="swap-btn"
+                            id="swapBtn"
+                            title="Swap units"
+                            aria-label="Swap units"
+                        >
+                            ⇄
+                        </button>
+
+
+                        <!-- To -->
+                        <div class="conversion-box">
+
+                            <label for="toUnit">
+                                To
+                            </label>
+
+                            <select id="toUnit"></select>
+
+                            <div class="result-box">
+
+                                <span id="result">
+                                    1
+                                </span>
+
+                                <button
+                                    id="copyBtn"
+                                    class="copy-btn"
+                                    title="Copy result"
+                                >
+                                    📋
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Conversion Details -->
+                    <div class="conversion-info">
+
+                        <div>
+                            <span class="info-label">
+                                Conversion
+                            </span>
+
+                            <strong id="conversionText">
+                                1 Meter = 3.28084 Feet
+                            </strong>
+                        </div>
+
+                        <div>
+                            <span class="info-label">
+                                Precision
+                            </span>
+
+                            <select id="precision">
+                                <option value="2">2 decimals</option>
+                                <option value="4">4 decimals</option>
+                                <option value="6" selected>6 decimals</option>
+                                <option value="8">8 decimals</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Popular Conversions -->
+                <section class="popular-section">
+
+                    <div class="section-heading">
+
+                        <div>
+                            <span class="section-label">
+                                QUICK ACCESS
+                            </span>
+
+                            <h2>
+                                Popular Conversions
+                            </h2>
+                        </div>
+
+                    </div>
+
+
+                    <div class="popular-grid">
+
+                        <button
+                            class="popular-card"
+                            data-category="length"
+                            data-from="meter"
+                            data-to="foot"
+                        >
+                            <span>📏</span>
+                            <strong>Meter → Feet</strong>
+                            <small>Length</small>
+                        </button>
+
+
+                        <button
+                            class="popular-card"
+                            data-category="length"
+                            data-from="kilometer"
+                            data-to="mile"
+                        >
+                            <span>🛣️</span>
+                            <strong>Km → Miles</strong>
+                            <small>Length</small>
+                        </button>
+
+
+                        <button
+                            class="popular-card"
+                            data-category="temperature"
+                            data-from="celsius"
+                            data-to="fahrenheit"
+                        >
+                            <span>🌡️</span>
+                            <strong>°C → °F</strong>
+                            <small>Temperature</small>
+                        </button>
+
+
+                        <button
+                            class="popular-card"
+                            data-category="mass"
+                            data-from="kilogram"
+                            data-to="pound"
+                        >
+                            <span>⚖️</span>
+                            <strong>Kg → Pounds</strong>
+                            <small>Mass</small>
+                        </button>
+
+
+                        <button
+                            class="popular-card"
+                            data-category="volume"
+                            data-from="liter"
+                            data-to="gallon"
+                        >
+                            <span>🧪</span>
+                            <strong>Liters → Gallons</strong>
+                            <small>Volume</small>
+                        </button>
+
+
+                        <button
+                            class="popular-card"
+                            data-category="data"
+                            data-from="megabyte"
+                            data-to="gigabyte"
+                        >
+                            <span>💾</span>
+                            <strong>MB → GB</strong>
+                            <small>Digital Data</small>
+                        </button>
+
+                    </div>
+
+                </section>
+
+
+                <!-- History -->
+                <section class="history-section">
+
+                    <div class="section-heading">
+
+                        <div>
+                            <span class="section-label">
+                                RECENT
+                            </span>
+
+                            <h2>
+                                Conversion History
+                            </h2>
+                        </div>
+
+                        <button
+                            id="clearHistory"
+                            class="clear-btn"
+                        >
+                            Clear History
+                        </button>
+
+                    </div>
+
+
+                    <div
+                        id="historyList"
+                        class="history-list"
+                    >
+                        <div class="empty-history">
+                            No conversions yet.
+                        </div>
+                    </div>
+
+                </section>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <div class="container">
+
+            <p>
+                ⚡ <strong>UnitFlow</strong>
+                — Smart Unit Converter
+            </p>
+
+            <p>
+                Built with HTML, CSS & JavaScript
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="js/units.js"></script>
+    <script src="js/converter.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+</html>
