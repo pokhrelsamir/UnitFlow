@@ -23,6 +23,7 @@ function renderHistory() {
             <div class="history-item">
 
                 <div>
+
                     <div class="history-main">
                         ${item.from} → ${item.to}
                     </div>
@@ -30,10 +31,7 @@ function renderHistory() {
                     <div class="history-time">
                         ${item.category} • ${time}
                     </div>
-                </div>
 
-                <div class="history-result">
-                    ${item.to}
                 </div>
 
             </div>
