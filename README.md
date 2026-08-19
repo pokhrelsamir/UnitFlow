@@ -14,7 +14,6 @@
 
 ---
 
-## 📸 Banner
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/2a3c4988-1b52-49a6-9229-cf80f29ac225" alt="UnitFlow Smart Unit Converter" width="100%">
@@ -22,18 +21,6 @@
 
 
 ---
-
-# 🌐 Live Demo
-
-Try the fully deployed SubnetX application:
-
-<div align="center">
-
-<a href="https://pokhrelsamir.github.io/UnitFlow/">
-  <img src="https://img.shields.io/badge/%F0%9F%9A%80%20Open%20UnitFlow-Live%20Demo-6366f1?style=for-the-badge" alt="Open UnitFlow Live Demo">
-</a>
-
-</div>
 
 
 ## 📖 About
@@ -256,17 +243,17 @@ No backend server or database is required.
 
 ### 🔄 Main Converter
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/YOUR-CONVERTER-SCREENSHOT-ID" alt="UnitFlow Converter" width="100%">
+  <img src="https://github.com/user-attachments/assets/0afcf42f-568f-47e3-90f1-d9fe773ede68" alt="UnitFlow Converter" width="100%">
 </p>
 
 ### 📚 Category Selection
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/YOUR-CATEGORY-SCREENSHOT-ID" alt="UnitFlow Category Dropdown" width="100%">
+  <img src="https://github.com/user-attachments/assets/a5a4b6a3-96b7-45a0-96aa-cd8f65707fb9" alt="UnitFlow Category Dropdown" width="100%">
 </p>
 
 ### 🕘 Conversion History
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/YOUR-HISTORY-SCREENSHOT-ID" alt="UnitFlow Conversion History" width="100%">
+  <img src="https://github.com/user-attachments/assets/959f6ebc-21b6-4679-a12e-35cef1dcea7b" alt="UnitFlow Conversion History" width="100%">
 </p>
 
 ---
@@ -363,6 +350,22 @@ Built using **HTML, CSS, and JavaScript**
 </a>
 <a href="https://www.linkedin.com/in/samirpokhrel/">
   <img src="https://img.shields.io/badge/LinkedIn-Samir%20Pokhrel-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
+</a>
+
+</div>
+
+<br>
+
+---
+
+# 🌐 Live Demo
+
+Try the fully deployed SubnetX application:
+
+<div align="center">
+
+<a href="https://pokhrelsamir.github.io/UnitFlow/">
+  <img src="https://img.shields.io/badge/%F0%9F%9A%80%20Open%20UnitFlow-Live%20Demo-6366f1?style=for-the-badge" alt="Open UnitFlow Live Demo">
 </a>
 
 </div>
