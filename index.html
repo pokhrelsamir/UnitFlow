@@ -86,12 +86,33 @@
 
                     <div class="form-group category-group">
 
-                        <label for="category">
+                        <label>
                             Conversion Category
                         </label>
 
-                        <select id="category">
-                        </select>
+                        <div class="custom-select" id="categoryDropdown">
+
+                            <button
+                                type="button"
+                                class="custom-select-trigger"
+                                id="categoryTrigger"
+                            >
+                                <span id="categorySelected">
+                                    📏&nbsp;&nbsp; Length
+                                </span>
+
+                                <span class="dropdown-arrow">
+                                    ▾
+                                </span>
+                            </button>
+
+                            <div
+                                class="custom-select-menu"
+                                id="categoryMenu"
+                            >
+                            </div>
+
+                        </div>
 
                     </div>
 
