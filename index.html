@@ -1,39 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <meta
         name="description"
         content="UnitFlow — A fast, modern and accurate smart unit converter."
     >
 
+    <meta
+        name="theme-color"
+        content="#6366f1"
+    >
+
     <title>UnitFlow — Smart Unit Converter</title>
 
-    <link rel="stylesheet" href="css/style.css">
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
 </head>
+
 
 <body>
 
-    <!-- =========================
-         Header
-    ========================== -->
+    <!-- =========================================
+         HEADER
+    ========================================== -->
 
     <header class="header">
 
         <div class="container nav">
 
-            <a href="#" class="logo">
-                <span class="logo-icon">⚡</span>
-                <span>UnitFlow</span>
+            <a
+                href="#"
+                class="logo"
+                aria-label="UnitFlow Home"
+            >
+
+                <span class="logo-icon">
+                    ⚡
+                </span>
+
+                <span>
+                    UnitFlow
+                </span>
+
             </a>
+
 
             <button
                 type="button"
                 class="theme-btn"
                 id="themeBtn"
                 aria-label="Toggle dark mode"
+                title="Toggle dark mode"
             >
                 🌙
             </button>
@@ -43,13 +72,16 @@
     </header>
 
 
-    <!-- =========================
-         Main
-    ========================== -->
+    <!-- =========================================
+         MAIN
+    ========================================== -->
 
     <main>
 
-        <!-- Hero -->
+
+        <!-- =====================================
+             HERO
+        ====================================== -->
 
         <section class="hero">
 
@@ -59,14 +91,16 @@
                     ⚡ SMART UNIT CONVERTER
                 </span>
 
+
                 <h1>
                     Convert Anything.
                     <span>Instantly.</span>
                 </h1>
 
+
                 <p>
-                    Fast, accurate and simple unit conversions
-                    for everyday calculations.
+                    Fast, accurate and simple unit
+                    conversions for everyday calculations.
                 </p>
 
             </div>
@@ -74,41 +108,66 @@
         </section>
 
 
-        <!-- Converter -->
+
+        <!-- =====================================
+             CONVERTER
+        ====================================== -->
 
         <section class="converter-section">
 
             <div class="container">
 
+
+                <!-- Converter Card -->
+
                 <div class="converter-card">
 
-                    <!-- Category -->
+
+                    <!-- =================================
+                         CATEGORY
+                    ================================== -->
 
                     <div class="form-group category-group">
 
-                        <label>
+                        <label for="categoryTrigger">
                             Conversion Category
                         </label>
 
-                        <div class="custom-select" id="categoryDropdown">
+
+                        <div
+                            class="custom-select"
+                            id="categoryDropdown"
+                        >
 
                             <button
                                 type="button"
                                 class="custom-select-trigger"
                                 id="categoryTrigger"
+                                aria-haspopup="listbox"
+                                aria-expanded="false"
+                                aria-controls="categoryMenu"
                             >
+
                                 <span id="categorySelected">
                                     📏&nbsp;&nbsp; Length
                                 </span>
 
-                                <span class="dropdown-arrow">
+
+                                <span
+                                    class="dropdown-arrow"
+                                    aria-hidden="true"
+                                >
                                     ▾
                                 </span>
+
                             </button>
+
 
                             <div
                                 class="custom-select-menu"
                                 id="categoryMenu"
+                                role="listbox"
+                                aria-label="Conversion categories"
                             >
                             </div>
 
@@ -117,11 +176,17 @@
                     </div>
 
 
-                    <!-- Conversion -->
+
+                    <!-- =================================
+                         CONVERSION ROW
+                    ================================== -->
 
                     <div class="conversion-row">
 
-                        <!-- From -->
+
+                        <!-- =============================
+                             FROM
+                        ============================== -->
 
                         <div class="conversion-box">
 
@@ -129,8 +194,14 @@
                                 From
                             </label>
 
-                            <select id="fromUnit">
+
+                            <select
+                                id="fromUnit"
+                                autocomplete="off"
+                                aria-label="Convert from unit"
+                            >
                             </select>
+
 
                             <input
                                 type="number"
@@ -139,12 +210,17 @@
                                 placeholder="Enter value"
                                 step="any"
                                 inputmode="decimal"
+                                autocomplete="off"
+                                aria-label="Value to convert"
                             >
 
                         </div>
 
 
-                        <!-- Swap -->
+
+                        <!-- =============================
+                             SWAP
+                        ============================== -->
 
                         <button
                             type="button"
@@ -157,7 +233,10 @@
                         </button>
 
 
-                        <!-- To -->
+
+                        <!-- =============================
+                             TO
+                        ============================== -->
 
                         <div class="conversion-box">
 
@@ -165,14 +244,24 @@
                                 To
                             </label>
 
-                            <select id="toUnit">
+
+                            <select
+                                id="toUnit"
+                                autocomplete="off"
+                                aria-label="Convert to unit"
+                            >
                             </select>
+
 
                             <div class="result-box">
 
-                                <span id="result">
+                                <span
+                                    id="result"
+                                    aria-live="polite"
+                                >
                                     1
                                 </span>
+
 
                                 <button
                                     type="button"
@@ -191,9 +280,15 @@
                     </div>
 
 
-                    <!-- Conversion Information -->
+
+                    <!-- =================================
+                         CONVERSION INFORMATION
+                    ================================== -->
 
                     <div class="conversion-info">
+
+
+                        <!-- Conversion -->
 
                         <div class="conversion-description">
 
@@ -201,12 +296,16 @@
                                 Conversion
                             </span>
 
+
                             <strong id="conversionText">
                                 1 m = 3.28084 ft
                             </strong>
 
                         </div>
 
+
+
+                        <!-- Precision -->
 
                         <div class="precision-control">
 
@@ -217,19 +316,29 @@
                                 Precision
                             </label>
 
-                            <select id="precision">
+
+                            <select
+                                id="precision"
+                                autocomplete="off"
+                            >
 
                                 <option value="2">
                                     2 decimals
                                 </option>
 
+
                                 <option value="4">
                                     4 decimals
                                 </option>
 
-                                <option value="6" selected>
+
+                                <option
+                                    value="6"
+                                    selected
+                                >
                                     6 decimals
                                 </option>
+
 
                                 <option value="8">
                                     8 decimals
@@ -244,11 +353,15 @@
                 </div>
 
 
-                <!-- =========================
-                     Popular Conversions
-                ========================== -->
 
-                <section class="popular-section">
+                <!-- =====================================
+                     POPULAR CONVERSIONS
+                ====================================== -->
+
+                <section
+                    class="popular-section"
+                    aria-labelledby="popularHeading"
+                >
 
                     <div class="section-heading">
 
@@ -258,7 +371,8 @@
                                 QUICK ACCESS
                             </span>
 
-                            <h2>
+
+                            <h2 id="popularHeading">
                                 Popular Conversions
                             </h2>
 
@@ -269,6 +383,9 @@
 
                     <div class="popular-grid">
 
+
+                        <!-- Meter → Feet -->
+
                         <button
                             type="button"
                             class="popular-card"
@@ -277,11 +394,15 @@
                             data-to="foot"
                         >
 
-                            <span>📏</span>
+                            <span aria-hidden="true">
+                                📏
+                            </span>
+
 
                             <strong>
                                 Meter → Feet
                             </strong>
+
 
                             <small>
                                 Length
@@ -289,6 +410,9 @@
 
                         </button>
 
+
+
+                        <!-- Km → Miles -->
 
                         <button
                             type="button"
@@ -298,11 +422,15 @@
                             data-to="mile"
                         >
 
-                            <span>🛣️</span>
+                            <span aria-hidden="true">
+                                🛣️
+                            </span>
+
 
                             <strong>
                                 Km → Miles
                             </strong>
+
 
                             <small>
                                 Length
@@ -310,6 +438,9 @@
 
                         </button>
 
+
+
+                        <!-- Celsius → Fahrenheit -->
 
                         <button
                             type="button"
@@ -319,11 +450,15 @@
                             data-to="fahrenheit"
                         >
 
-                            <span>🌡️</span>
+                            <span aria-hidden="true">
+                                🌡️
+                            </span>
+
 
                             <strong>
                                 °C → °F
                             </strong>
+
 
                             <small>
                                 Temperature
@@ -331,6 +466,9 @@
 
                         </button>
 
+
+
+                        <!-- Kg → Pounds -->
 
                         <button
                             type="button"
@@ -340,11 +478,15 @@
                             data-to="pound"
                         >
 
-                            <span>⚖️</span>
+                            <span aria-hidden="true">
+                                ⚖️
+                            </span>
+
 
                             <strong>
                                 Kg → Pounds
                             </strong>
+
 
                             <small>
                                 Mass
@@ -352,6 +494,9 @@
 
                         </button>
 
+
+
+                        <!-- Liters → Gallons -->
 
                         <button
                             type="button"
@@ -361,11 +506,15 @@
                             data-to="gallon"
                         >
 
-                            <span>🧪</span>
+                            <span aria-hidden="true">
+                                🧪
+                            </span>
+
 
                             <strong>
                                 Liters → Gallons
                             </strong>
+
 
                             <small>
                                 Volume
@@ -373,6 +522,9 @@
 
                         </button>
 
+
+
+                        <!-- MB → GB -->
 
                         <button
                             type="button"
@@ -382,11 +534,15 @@
                             data-to="gigabyte"
                         >
 
-                            <span>💾</span>
+                            <span aria-hidden="true">
+                                💾
+                            </span>
+
 
                             <strong>
                                 MB → GB
                             </strong>
+
 
                             <small>
                                 Digital Data
@@ -399,11 +555,15 @@
                 </section>
 
 
-                <!-- =========================
-                     History
-                ========================== -->
 
-                <section class="history-section">
+                <!-- =====================================
+                     HISTORY
+                ====================================== -->
+
+                <section
+                    class="history-section"
+                    aria-labelledby="historyHeading"
+                >
 
                     <div class="section-heading">
 
@@ -413,11 +573,13 @@
                                 RECENT
                             </span>
 
-                            <h2>
+
+                            <h2 id="historyHeading">
                                 Conversion History
                             </h2>
 
                         </div>
+
 
                         <button
                             type="button"
@@ -433,6 +595,7 @@
                     <div
                         class="history-list"
                         id="historyList"
+                        aria-live="polite"
                     >
                     </div>
 
@@ -445,21 +608,24 @@
     </main>
 
 
-    <!-- =========================
-         Footer
-    ========================== -->
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
 
     <footer class="footer">
 
         <div class="container">
 
             <p>
-                ⚡ <strong>UnitFlow</strong>
+                ⚡
+                <strong>UnitFlow</strong>
                 — Smart Unit Converter
             </p>
 
+
             <p>
-                Built with HTML, CSS & JavaScript
+                Built with HTML, CSS &amp; JavaScript
             </p>
 
         </div>
@@ -467,12 +633,19 @@
     </footer>
 
 
-    <!-- JavaScript -->
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
 
     <script src="js/units.js"></script>
+
     <script src="js/converter.js"></script>
+
     <script src="js/storage.js"></script>
+
     <script src="js/app.js"></script>
 
 </body>
+
 </html>
