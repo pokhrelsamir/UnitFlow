@@ -3,11 +3,24 @@
    Unit Definitions
 ========================================= */
 
+
 const UNIT_DATA = {
 
+
+    /* =========================================
+       LENGTH
+    ========================================== */
+
     length: {
+
         name: "Length",
+
         icon: "📏",
+
+        description:
+            "Convert distances and measurements of length.",
+
+        base: "meter",
 
         units: {
 
@@ -35,6 +48,18 @@ const UNIT_DATA = {
                 factor: 0.001
             },
 
+            micrometer: {
+                name: "Micrometer",
+                symbol: "μm",
+                factor: 0.000001
+            },
+
+            nanometer: {
+                name: "Nanometer",
+                symbol: "nm",
+                factor: 0.000000001
+            },
+
             mile: {
                 name: "Mile",
                 symbol: "mi",
@@ -57,15 +82,33 @@ const UNIT_DATA = {
                 name: "Inch",
                 symbol: "in",
                 factor: 0.0254
+            },
+
+            nauticalMile: {
+                name: "Nautical Mile",
+                symbol: "nmi",
+                factor: 1852
             }
 
         }
+
     },
 
 
+    /* =========================================
+       MASS
+    ========================================== */
+
     mass: {
+
         name: "Mass",
+
         icon: "⚖️",
+
+        description:
+            "Convert weights and mass measurements.",
+
+        base: "kilogram",
 
         units: {
 
@@ -87,6 +130,18 @@ const UNIT_DATA = {
                 factor: 0.000001
             },
 
+            microgram: {
+                name: "Microgram",
+                symbol: "μg",
+                factor: 0.000000001
+            },
+
+            metricTon: {
+                name: "Metric Ton",
+                symbol: "t",
+                factor: 1000
+            },
+
             pound: {
                 name: "Pound",
                 symbol: "lb",
@@ -97,15 +152,33 @@ const UNIT_DATA = {
                 name: "Ounce",
                 symbol: "oz",
                 factor: 0.028349523125
+            },
+
+            stone: {
+                name: "Stone",
+                symbol: "st",
+                factor: 6.35029318
             }
 
         }
+
     },
 
 
+    /* =========================================
+       TEMPERATURE
+    ========================================== */
+
     temperature: {
+
         name: "Temperature",
+
         icon: "🌡️",
+
+        description:
+            "Convert Celsius, Fahrenheit and Kelvin.",
+
+        base: "celsius",
 
         units: {
 
@@ -125,14 +198,32 @@ const UNIT_DATA = {
             }
 
         }
+
     },
 
 
+    /* =========================================
+       TIME
+    ========================================== */
+
     time: {
+
         name: "Time",
+
         icon: "⏱️",
 
+        description:
+            "Convert seconds, minutes, hours and larger time units.",
+
+        base: "second",
+
         units: {
+
+            millisecond: {
+                name: "Millisecond",
+                symbol: "ms",
+                factor: 0.001
+            },
 
             second: {
                 name: "Second",
@@ -162,15 +253,39 @@ const UNIT_DATA = {
                 name: "Week",
                 symbol: "week",
                 factor: 604800
+            },
+
+            month: {
+                name: "Month",
+                symbol: "month",
+                factor: 2629800
+            },
+
+            year: {
+                name: "Year",
+                symbol: "year",
+                factor: 31557600
             }
 
         }
+
     },
 
 
+    /* =========================================
+       AREA
+    ========================================== */
+
     area: {
+
         name: "Area",
+
         icon: "📐",
+
+        description:
+            "Convert land, surface and geometric areas.",
+
+        base: "squareMeter",
 
         units: {
 
@@ -184,6 +299,30 @@ const UNIT_DATA = {
                 name: "Square Kilometer",
                 symbol: "km²",
                 factor: 1000000
+            },
+
+            squareCentimeter: {
+                name: "Square Centimeter",
+                symbol: "cm²",
+                factor: 0.0001
+            },
+
+            squareMillimeter: {
+                name: "Square Millimeter",
+                symbol: "mm²",
+                factor: 0.000001
+            },
+
+            squareMile: {
+                name: "Square Mile",
+                symbol: "mi²",
+                factor: 2589988.110336
+            },
+
+            squareYard: {
+                name: "Square Yard",
+                symbol: "yd²",
+                factor: 0.83612736
             },
 
             squareFoot: {
@@ -211,12 +350,24 @@ const UNIT_DATA = {
             }
 
         }
+
     },
 
 
+    /* =========================================
+       VOLUME
+    ========================================== */
+
     volume: {
+
         name: "Volume",
+
         icon: "🧪",
+
+        description:
+            "Convert liquid and three-dimensional volume measurements.",
+
+        base: "liter",
 
         units: {
 
@@ -230,6 +381,30 @@ const UNIT_DATA = {
                 name: "Milliliter",
                 symbol: "mL",
                 factor: 0.001
+            },
+
+            cubicMeter: {
+                name: "Cubic Meter",
+                symbol: "m³",
+                factor: 1000
+            },
+
+            cubicCentimeter: {
+                name: "Cubic Centimeter",
+                symbol: "cm³",
+                factor: 0.001
+            },
+
+            cubicInch: {
+                name: "Cubic Inch",
+                symbol: "in³",
+                factor: 0.016387064
+            },
+
+            cubicFoot: {
+                name: "Cubic Foot",
+                symbol: "ft³",
+                factor: 28.316846592
             },
 
             gallon: {
@@ -250,19 +425,31 @@ const UNIT_DATA = {
                 factor: 0.473176473
             },
 
-            cubicMeter: {
-                name: "Cubic Meter",
-                symbol: "m³",
-                factor: 1000
+            cup: {
+                name: "Cup",
+                symbol: "cup",
+                factor: 0.2365882365
             }
 
         }
+
     },
 
 
+    /* =========================================
+       SPEED
+    ========================================== */
+
     speed: {
+
         name: "Speed",
+
         icon: "🚀",
+
+        description:
+            "Convert speed and velocity measurements.",
+
+        base: "meterPerSecond",
 
         units: {
 
@@ -275,7 +462,7 @@ const UNIT_DATA = {
             kilometerPerHour: {
                 name: "Kilometer / Hour",
                 symbol: "km/h",
-                factor: 0.277777778
+                factor: 0.2777777778
             },
 
             milePerHour: {
@@ -284,19 +471,43 @@ const UNIT_DATA = {
                 factor: 0.44704
             },
 
+            footPerSecond: {
+                name: "Foot / Second",
+                symbol: "ft/s",
+                factor: 0.3048
+            },
+
             knot: {
                 name: "Knot",
                 symbol: "kn",
-                factor: 0.514444444
+                factor: 0.5144444444
+            },
+
+            mach: {
+                name: "Mach",
+                symbol: "Mach",
+                factor: 343
             }
 
         }
+
     },
 
 
+    /* =========================================
+       DIGITAL DATA
+    ========================================== */
+
     data: {
+
         name: "Digital Data",
+
         icon: "💾",
+
+        description:
+            "Convert digital storage and data sizes.",
+
+        base: "bit",
 
         units: {
 
@@ -312,10 +523,22 @@ const UNIT_DATA = {
                 factor: 8
             },
 
+            kilobit: {
+                name: "Kilobit",
+                symbol: "Kbit",
+                factor: 8 * 1024
+            },
+
             kilobyte: {
                 name: "Kilobyte",
                 symbol: "KB",
                 factor: 8 * 1024
+            },
+
+            megabit: {
+                name: "Megabit",
+                symbol: "Mbit",
+                factor: 8 * 1024 ** 2
             },
 
             megabyte: {
@@ -324,10 +547,22 @@ const UNIT_DATA = {
                 factor: 8 * 1024 ** 2
             },
 
+            gigabit: {
+                name: "Gigabit",
+                symbol: "Gbit",
+                factor: 8 * 1024 ** 3
+            },
+
             gigabyte: {
                 name: "Gigabyte",
                 symbol: "GB",
                 factor: 8 * 1024 ** 3
+            },
+
+            terabit: {
+                name: "Terabit",
+                symbol: "Tbit",
+                factor: 8 * 1024 ** 4
             },
 
             terabyte: {
@@ -337,6 +572,7 @@ const UNIT_DATA = {
             }
 
         }
+
     }
 
 };
