@@ -4,9 +4,9 @@
 ========================================= */
 
 
-/* =========================
-   Reset
-========================= */
+/* =========================================
+   RESET
+========================================= */
 
 * {
     margin: 0;
@@ -15,18 +15,26 @@
 }
 
 
+/* =========================================
+   ROOT VARIABLES
+========================================= */
+
 :root {
 
     --bg: #f5f7fb;
+
     --surface: #ffffff;
+
     --surface-soft: #f8fafc;
 
     --text: #111827;
+
     --text-soft: #64748b;
 
     --border: #e2e8f0;
 
     --primary: #6366f1;
+
     --primary-dark: #4f46e5;
 
     --danger: #ef4444;
@@ -34,33 +42,42 @@
     --shadow:
         0 20px 50px rgba(15, 23, 42, 0.08);
 
+    --dropdown-shadow:
+        0 18px 45px rgba(15, 23, 42, 0.15);
+
     --radius: 18px;
 }
 
 
-/* =========================
-   Dark Theme
-========================= */
+/* =========================================
+   DARK THEME
+========================================= */
 
 body.dark {
 
     --bg: #0f172a;
+
     --surface: #111827;
+
     --surface-soft: #1e293b;
 
     --text: #f8fafc;
+
     --text-soft: #94a3b8;
 
     --border: #334155;
 
     --shadow:
         0 20px 50px rgba(0, 0, 0, 0.35);
+
+    --dropdown-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.45);
 }
 
 
-/* =========================
-   Base
-========================= */
+/* =========================================
+   BASE
+========================================= */
 
 html {
     scroll-behavior: smooth;
@@ -80,6 +97,7 @@ body {
         sans-serif;
 
     background: var(--bg);
+
     color: var(--text);
 
     transition:
@@ -100,24 +118,42 @@ button {
 }
 
 
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+
+    outline: none;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(99, 102, 241, 0.18);
+}
+
+
 .container {
 
-    width: min(
-        1120px,
-        calc(100% - 40px)
-    );
+    width:
+        min(
+            1120px,
+            calc(100% - 40px)
+        );
 
     margin: 0 auto;
 }
 
 
-/* =========================
-   Header
-========================= */
+/* =========================================
+   HEADER
+========================================= */
 
 .header {
 
-    background: var(--surface);
+    position: relative;
+
+    z-index: 2000;
+
+    background:
+        var(--surface);
 
     border-bottom:
         1px solid var(--border);
@@ -131,6 +167,7 @@ button {
     display: flex;
 
     align-items: center;
+
     justify-content: space-between;
 }
 
@@ -148,6 +185,7 @@ button {
     text-decoration: none;
 
     font-size: 1.3rem;
+
     font-weight: 800;
 }
 
@@ -155,14 +193,17 @@ button {
 .logo-icon {
 
     width: 38px;
+
     height: 38px;
 
     display: grid;
+
     place-items: center;
 
     border-radius: 11px;
 
-    background: var(--primary);
+    background:
+        var(--primary);
 
     color: white;
 
@@ -173,9 +214,11 @@ button {
 .theme-btn {
 
     width: 42px;
+
     height: 42px;
 
     display: grid;
+
     place-items: center;
 
     border:
@@ -183,9 +226,11 @@ button {
 
     border-radius: 12px;
 
-    background: var(--surface-soft);
+    background:
+        var(--surface-soft);
 
-    color: var(--text);
+    color:
+        var(--text);
 
     transition:
         transform 0.2s ease,
@@ -195,16 +240,17 @@ button {
 
 .theme-btn:hover {
 
-    transform: translateY(-2px);
+    transform:
+        translateY(-2px);
 
     border-color:
         var(--primary);
 }
 
 
-/* =========================
-   Hero
-========================= */
+/* =========================================
+   HERO
+========================================= */
 
 .hero {
 
@@ -219,6 +265,8 @@ button {
 
     display: inline-flex;
 
+    align-items: center;
+
     padding:
         8px 14px;
 
@@ -227,15 +275,30 @@ button {
 
     border-radius: 999px;
 
-    background: #eef2ff;
+    background:
+        #eef2ff;
 
-    color: var(--primary);
+    color:
+        var(--primary);
 
     font-size: 0.75rem;
 
     font-weight: 800;
 
     letter-spacing: 0.08em;
+}
+
+
+body.dark .badge {
+
+    border-color:
+        #3730a3;
+
+    background:
+        rgba(99, 102, 241, 0.12);
+
+    color:
+        #a5b4fc;
 }
 
 
@@ -254,7 +317,8 @@ button {
 
 .hero h1 span {
 
-    color: var(--primary);
+    color:
+        var(--primary);
 }
 
 
@@ -265,7 +329,8 @@ button {
     margin:
         22px auto 0;
 
-    color: var(--text-soft);
+    color:
+        var(--text-soft);
 
     font-size: 1.08rem;
 
@@ -273,11 +338,15 @@ button {
 }
 
 
-/* =========================
-   Converter Section
-========================= */
+/* =========================================
+   CONVERTER SECTION
+========================================= */
 
 .converter-section {
+
+    position: relative;
+
+    z-index: 10;
 
     padding-bottom: 80px;
 }
@@ -285,22 +354,27 @@ button {
 
 .converter-card {
 
+    position: relative;
+
     padding: 32px;
 
-    background: var(--surface);
+    background:
+        var(--surface);
 
     border:
         1px solid var(--border);
 
-    border-radius: var(--radius);
+    border-radius:
+        var(--radius);
 
-    box-shadow: var(--shadow);
+    box-shadow:
+        var(--shadow);
 }
 
 
-/* =========================
-   Form
-========================= */
+/* =========================================
+   FORM
+========================================= */
 
 .form-group {
 
@@ -315,7 +389,8 @@ button {
 .form-group label,
 .conversion-box label {
 
-    color: var(--text-soft);
+    color:
+        var(--text-soft);
 
     font-size: 0.82rem;
 
@@ -323,9 +398,9 @@ button {
 }
 
 
-/* =========================
-   SELECT
-========================= */
+/* =========================================
+   NATIVE SELECT
+========================================= */
 
 select {
 
@@ -375,15 +450,9 @@ select:focus {
 }
 
 
-/*
-   Important:
-   Native select menus are rendered
-   partly by the operating system/browser.
-*/
-
 select option {
 
-    background-color:
+    background:
         var(--surface);
 
     color:
@@ -395,7 +464,7 @@ select option {
 
 body.dark select {
 
-    background-color:
+    background:
         #1e293b;
 
     color:
@@ -405,7 +474,7 @@ body.dark select {
 
 body.dark select option {
 
-    background-color:
+    background:
         #1e293b;
 
     color:
@@ -413,9 +482,378 @@ body.dark select option {
 }
 
 
-/* =========================
-   Input
-========================= */
+/* =========================================
+   CUSTOM CATEGORY DROPDOWN
+========================================= */
+
+.category-group {
+
+    position: relative;
+
+    z-index: 1000;
+}
+
+
+.custom-select {
+
+    position: relative;
+
+    width: 100%;
+}
+
+
+/* -----------------------------------------
+   Dropdown Trigger
+----------------------------------------- */
+
+.custom-select-trigger {
+
+    width: 100%;
+
+    min-height: 52px;
+
+    padding:
+        0 16px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 12px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 12px;
+
+    background:
+        var(--surface-soft);
+
+    color:
+        var(--text);
+
+    cursor: pointer;
+
+    text-align: left;
+
+    appearance: none;
+
+    -webkit-appearance: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.custom-select-trigger:hover {
+
+    border-color:
+        var(--primary);
+}
+
+
+.custom-select.open
+.custom-select-trigger {
+
+    border-color:
+        var(--primary);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(99, 102, 241, 0.12);
+}
+
+
+/* -----------------------------------------
+   Selected Category
+----------------------------------------- */
+
+#categorySelected {
+
+    display: flex;
+
+    align-items: center;
+
+    min-width: 0;
+
+    overflow: hidden;
+
+    color:
+        var(--text);
+
+    font-size: 0.95rem;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+}
+
+
+/* -----------------------------------------
+   Arrow
+----------------------------------------- */
+
+.dropdown-arrow {
+
+    flex-shrink: 0;
+
+    color:
+        var(--text-soft);
+
+    font-size: 1.1rem;
+
+    line-height: 1;
+
+    transition:
+        transform 0.2s ease,
+        color 0.2s ease;
+}
+
+
+.custom-select.open
+.dropdown-arrow {
+
+    transform:
+        rotate(180deg);
+
+    color:
+        var(--primary);
+}
+
+
+/* -----------------------------------------
+   Dropdown Menu
+----------------------------------------- */
+
+.custom-select-menu {
+
+    position: absolute;
+
+    top:
+        calc(100% + 8px);
+
+    left: 0;
+
+    width: 100%;
+
+    max-height: 300px;
+
+    padding: 6px;
+
+    overflow-x: hidden;
+
+    overflow-y: auto;
+
+    visibility: hidden;
+
+    opacity: 0;
+
+    transform:
+        translateY(-5px);
+
+    pointer-events: none;
+
+    background:
+        var(--surface);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 14px;
+
+    box-shadow:
+        var(--dropdown-shadow);
+
+    z-index: 9999;
+
+    transition:
+        opacity 0.15s ease,
+        transform 0.15s ease,
+        visibility 0.15s ease;
+}
+
+
+.custom-select.open
+.custom-select-menu {
+
+    visibility: visible;
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+    pointer-events: auto;
+}
+
+
+/* -----------------------------------------
+   Category Option
+----------------------------------------- */
+
+.category-option {
+
+    width: 100%;
+
+    min-height: 46px;
+
+    padding:
+        11px 13px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background:
+        transparent;
+
+    color:
+        var(--text);
+
+    text-align: left;
+
+    font-size: 0.92rem;
+
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition:
+        background 0.15s ease,
+        color 0.15s ease;
+}
+
+
+.category-option:hover {
+
+    background:
+        rgba(99, 102, 241, 0.10);
+
+    color:
+        var(--primary);
+}
+
+
+.category-option.active {
+
+    background:
+        rgba(99, 102, 241, 0.12);
+
+    color:
+        var(--primary);
+
+    font-weight: 700;
+}
+
+
+.category-option:focus-visible {
+
+    outline: none;
+
+    background:
+        rgba(99, 102, 241, 0.12);
+}
+
+
+/* -----------------------------------------
+   Dropdown Scrollbar
+----------------------------------------- */
+
+.custom-select-menu::-webkit-scrollbar {
+
+    width: 6px;
+}
+
+
+.custom-select-menu::-webkit-scrollbar-track {
+
+    background:
+        transparent;
+}
+
+
+.custom-select-menu::-webkit-scrollbar-thumb {
+
+    background:
+        var(--border);
+
+    border-radius: 10px;
+}
+
+
+.custom-select-menu::-webkit-scrollbar-thumb:hover {
+
+    background:
+        var(--text-soft);
+}
+
+
+/* -----------------------------------------
+   Dark Dropdown
+----------------------------------------- */
+
+body.dark
+.custom-select-trigger {
+
+    background:
+        #1e293b;
+
+    color:
+        #f8fafc;
+}
+
+
+body.dark
+.custom-select-menu {
+
+    background:
+        #111827;
+
+    border-color:
+        #334155;
+
+    box-shadow:
+        var(--dropdown-shadow);
+}
+
+
+body.dark
+.category-option:hover {
+
+    background:
+        rgba(99, 102, 241, 0.16);
+
+    color:
+        #a5b4fc;
+}
+
+
+body.dark
+.category-option.active {
+
+    background:
+        rgba(99, 102, 241, 0.18);
+
+    color:
+        #a5b4fc;
+}
+
+
+/* =========================================
+   INPUT
+========================================= */
 
 input {
 
@@ -469,9 +907,9 @@ input:focus {
 }
 
 
-/* =========================
-   Conversion Row
-========================= */
+/* =========================================
+   CONVERSION ROW
+========================================= */
 
 .conversion-row {
 
@@ -498,13 +936,14 @@ input:focus {
 }
 
 
-/* =========================
-   Swap
-========================= */
+/* =========================================
+   SWAP
+========================================= */
 
 .swap-btn {
 
     width: 52px;
+
     height: 52px;
 
     border:
@@ -525,7 +964,8 @@ input:focus {
     transition:
         transform 0.25s ease,
         background 0.2s ease,
-        color 0.2s ease;
+        color 0.2s ease,
+        border-color 0.2s ease;
 }
 
 
@@ -534,16 +974,20 @@ input:focus {
     background:
         var(--primary);
 
-    color: white;
+    color:
+        white;
+
+    border-color:
+        var(--primary);
 
     transform:
         rotate(180deg);
 }
 
 
-/* =========================
-   Result
-========================= */
+/* =========================================
+   RESULT
+========================================= */
 
 .result-box {
 
@@ -558,6 +1002,8 @@ input:focus {
 
     justify-content: space-between;
 
+    gap: 12px;
+
     border:
         1px solid var(--border);
 
@@ -569,6 +1015,8 @@ input:focus {
 
 
 #result {
+
+    min-width: 0;
 
     overflow: hidden;
 
@@ -587,11 +1035,15 @@ input:focus {
 
 .copy-btn {
 
+    flex-shrink: 0;
+
     border: none;
 
-    background: transparent;
+    background:
+        transparent;
 
-    color: var(--text);
+    color:
+        var(--text);
 
     font-size: 1.1rem;
 
@@ -612,9 +1064,9 @@ input:focus {
 }
 
 
-/* =========================
-   Conversion Info
-========================= */
+/* =========================================
+   CONVERSION INFO
+========================================= */
 
 .conversion-info {
 
@@ -680,9 +1132,9 @@ input:focus {
 }
 
 
-/* =========================
-   Sections
-========================= */
+/* =========================================
+   SECTIONS
+========================================= */
 
 .popular-section,
 .history-section {
@@ -728,9 +1180,9 @@ input:focus {
 }
 
 
-/* =========================
-   Popular Cards
-========================= */
+/* =========================================
+   POPULAR CARDS
+========================================= */
 
 .popular-grid {
 
@@ -789,6 +1241,14 @@ input:focus {
 }
 
 
+body.dark .popular-card:hover {
+
+    box-shadow:
+        0 12px 30px
+        rgba(0, 0, 0, 0.25);
+}
+
+
 .popular-card span {
 
     font-size: 1.5rem;
@@ -808,9 +1268,9 @@ input:focus {
 }
 
 
-/* =========================
-   History
-========================= */
+/* =========================================
+   HISTORY
+========================================= */
 
 .clear-btn {
 
@@ -831,6 +1291,11 @@ input:focus {
     font-size: 0.82rem;
 
     font-weight: 700;
+
+    transition:
+        border-color 0.2s ease,
+        color 0.2s ease,
+        background 0.2s ease;
 }
 
 
@@ -864,6 +1329,8 @@ input:focus {
     align-items: center;
 
     justify-content: space-between;
+
+    gap: 16px;
 
     border:
         1px solid var(--border);
@@ -908,13 +1375,14 @@ input:focus {
 }
 
 
-/* =========================
-   Footer
-========================= */
+/* =========================================
+   FOOTER
+========================================= */
 
 .footer {
 
-    padding: 30px 0;
+    padding:
+        30px 0;
 
     border-top:
         1px solid var(--border);
@@ -945,9 +1413,9 @@ input:focus {
 }
 
 
-/* =========================
-   Responsive
-========================= */
+/* =========================================
+   RESPONSIVE — TABLET
+========================================= */
 
 @media (max-width: 800px) {
 
@@ -960,7 +1428,8 @@ input:focus {
 
     .conversion-row {
 
-        grid-template-columns: 1fr;
+        grid-template-columns:
+            1fr;
     }
 
 
@@ -1000,24 +1469,54 @@ input:focus {
 }
 
 
+/* =========================================
+   RESPONSIVE — MOBILE
+========================================= */
+
 @media (max-width: 550px) {
 
     .container {
 
         width:
-            min(100% - 24px, 1120px);
+            min(
+                calc(100% - 24px),
+                1120px
+            );
+    }
+
+
+    .hero {
+
+        padding:
+            50px 0 35px;
+    }
+
+
+    .hero h1 {
+
+        font-size:
+            clamp(2.2rem, 12vw, 3.4rem);
+    }
+
+
+    .hero p {
+
+        font-size:
+            0.98rem;
     }
 
 
     .converter-card {
 
-        padding: 20px;
+        padding:
+            20px;
     }
 
 
     .popular-grid {
 
-        grid-template-columns: 1fr;
+        grid-template-columns:
+            1fr;
     }
 
 
@@ -1040,201 +1539,36 @@ input:focus {
             column;
     }
 
+
+    .custom-select-menu {
+
+        max-height:
+            250px;
+    }
+
 }
+
 
 /* =========================================
-   CUSTOM CATEGORY DROPDOWN
+   REDUCED MOTION
 ========================================= */
 
-.custom-select {
-    position: relative;
-    width: 100%;
-}
+@media (prefers-reduced-motion: reduce) {
 
+    html {
+        scroll-behavior: auto;
+    }
 
-/* Trigger */
 
-.custom-select-trigger {
-    width: 100%;
-    min-height: 52px;
+    *,
+    *::before,
+    *::after {
 
-    padding: 0 16px;
+        transition:
+            none !important;
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+        animation:
+            none !important;
+    }
 
-    border: 1px solid var(--border);
-    border-radius: 12px;
-
-    background: var(--surface-soft);
-    color: var(--text);
-
-    cursor: pointer;
-
-    text-align: left;
-
-    transition:
-        border-color 0.2s ease,
-        box-shadow 0.2s ease,
-        background 0.2s ease;
-}
-
-
-.custom-select-trigger:hover {
-    border-color: var(--primary);
-}
-
-
-.custom-select.open .custom-select-trigger {
-    border-color: var(--primary);
-
-    box-shadow:
-        0 0 0 3px rgba(99, 102, 241, 0.12);
-}
-
-
-/* Arrow */
-
-.dropdown-arrow {
-    color: var(--text-soft);
-
-    font-size: 1.1rem;
-
-    transition:
-        transform 0.2s ease;
-}
-
-
-.custom-select.open .dropdown-arrow {
-    transform: rotate(180deg);
-
-    color: var(--primary);
-}
-
-
-/* Menu */
-
-.custom-select-menu {
-
-    position: absolute;
-
-    top: calc(100% + 8px);
-    left: 0;
-
-    width: 100%;
-
-    padding: 6px;
-
-    display: none;
-
-    background: var(--surface);
-
-    border: 1px solid var(--border);
-
-    border-radius: 14px;
-
-    box-shadow:
-        0 18px 45px rgba(15, 23, 42, 0.15);
-
-    z-index: 1000;
-
-    max-height: 300px;
-
-    overflow-y: auto;
-}
-
-
-.custom-select.open .custom-select-menu {
-    display: block;
-}
-
-
-/* Menu item */
-
-.category-option {
-
-    width: 100%;
-
-    padding: 13px 14px;
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 10px;
-
-    border: none;
-
-    border-radius: 9px;
-
-    background: transparent;
-
-    color: var(--text);
-
-    text-align: left;
-
-    cursor: pointer;
-
-    font-size: 0.92rem;
-
-    transition:
-        background 0.15s ease,
-        color 0.15s ease;
-}
-
-
-.category-option:hover {
-    background: rgba(99, 102, 241, 0.1);
-
-    color: var(--primary);
-}
-
-
-.category-option.active {
-    background: rgba(99, 102, 241, 0.12);
-
-    color: var(--primary);
-
-    font-weight: 700;
-}
-
-
-/* Dark mode */
-
-body.dark .custom-select-menu {
-
-    background: #111827;
-
-    border-color: #334155;
-
-    box-shadow:
-        0 18px 45px rgba(0, 0, 0, 0.45);
-}
-
-
-body.dark .category-option:hover {
-
-    background:
-        rgba(99, 102, 241, 0.16);
-}
-
-
-/* Scrollbar */
-
-.custom-select-menu::-webkit-scrollbar {
-    width: 6px;
-}
-
-
-.custom-select-menu::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-
-.custom-select-menu::-webkit-scrollbar-thumb {
-
-    background: var(--border);
-
-    border-radius: 10px;
 }
